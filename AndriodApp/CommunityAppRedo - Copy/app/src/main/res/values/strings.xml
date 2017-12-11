@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CommunityAppRedo</string>
+    <string name="edit_message">Enter Message</string>
+    <string name="button_send">Send</string>
+</resources><!-- Specify all UI strings here
+     Allows you to manage all UI strings in a single file
+     Makes it easier to find, update and localize strings
+-->

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE7" />
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"eeb65375b8","agent":"","transactionName":"NV1TZUZRVhBSWxdcWQwXd0RaU0wKXFZMVl0DVlRJQB5cBEYWAFpYFkpeXVhVShAdTAtQWwcCZVlRXV0gXFYXR1kOVFRDGllWB1ZA","applicationID":"42808489","errorBeacon":"bam.nr-data.net","applicationTime":1398}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ireland's open data portal. Promoting innovation and transparency through the publication of Irish Public Sector data in open, free and reusable formats." />
+  <meta name="author" content="" />
+  <link rel="canonical" href="https://data.gov.ie" />
+
+  <meta name="theme-color" content="#01aef0" />
+
+  <meta property="og:url" content="https://data.gov.ie" />
+  <meta property="og:title" content="data.gov.ie — Ireland's open data portal" />
+  <meta property="og:description" content="Ireland's open data portal. Promoting innovation and transparency through the publication of Irish Public Sector data in open, free and reusable formats." />
+  <meta property="og:image" content="http://data.gov.ie/assets/img/dgi-logo.png" />
+
+    <title>Data.gov.ie</title>
+
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    
+  
+
+  <link rel="stylesheet" href="/assets/css/datagovuk.min.css?1497263914353" />
+  <link rel="stylesheet" href="/css/dgu-ckan.min.css?1494336136744" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://data.gov.ie/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://data.gov.ie/data/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://data.gov.ie",
+      "logo": "https://data.gov.ie/assets/img/dgi-header.png"
+    }
+</script>
+
+  
+  <script type="text/javascript">
+    CKAN = {};
+    // later use will add offsets with leading '/' so ensure no trailing slash
+    CKAN.SITE_URL = '/'.replace(/\/$/, '');
+    CKAN.SITE_URL_NO_LOCALE = '/'.replace(/\/$/, '');
+    CKAN.USER = '';
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>
+    //<![CDATA[
+    window.jQuery || document.write('<script src="/assets/js/jquery-1.8.3.min.js"><\/script>')
+    // ]]>
+  </script>
+
+  <!-- Vendor scripts -->
+  <script type="text/javascript" src="/assets/js/vendor.min.js?1497263914353"></script>
+  <!-- CKAN DGU scripts -->
+  <script type="text/javascript" src="/assets/js/dgu-shared.min.js?1494336136744"></script>
+  <script type="text/javascript" src="/scripts/dgu-ckan-application.min.js?1494336136744"></script>
+
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- font-awesome ie7 shim -->
+  <!--[if IE 7]>
+    <link rel="stylesheet" media="all" href="/assets/css/font-awesome-ie7.min.css" />
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+      <link href="/assets/css/dgu-ie7.css" rel="stylesheet" />
+  <![endif]-->
+
+
+    
+  </head>
+
+  
+  <body
+ class="action-index index
+        controller-theme ThemeController
+        no-sidebar
+        "
+      id=""
+>
+
+    
+  
+    
+
+<div id="blackbar" class="without-publisher">
+    <nav id="dgu-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button style="background-color: #5bc0de; color: white;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" style="background-color: white"></span>
+                    <span class="icon-bar" style="background-color: white"></span>
+                    <span class="icon-bar" style="background-color: white"></span>
+                </button>
+                <a class="brand" href="/" rel="home"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav" style="padding-top: 4px;">
+                        <li class="hidden-md"><a href="/">Home</a></li>
+                        <li><a href="/data/search">Datasets</a></li>
+                        <li><a href="/publisher">Publishers</a></li>
+                        <li><a href="/dataset/suggest">Suggest Data</a></li>
+                        <li><a href="/showcase">Showcases</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                
+                                    <li><a href="/user">Login</a></li>
+                                
+
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/blog">Latest News</a></li>
+                                <li><a href="/guide-for-publishers">Guide for Publishers </a></li>
+                                <li><a href="/developers">Developers</a></li>
+                                <li role="separator" class="divider"></li>
+
+                                <li><a href="/resources">Resources & Publications</a></li>
+                                <li><a href="/resources/events">Events & Public Consultations</a></li>
+                                <li><a href="/psi">Re-Use of Public Sector Information</a></li>
+                                <li><a href="/license">Open Data Licence </a></li>
+                                <li><a href="/resources/open-data-governance-board">Open Data Governance Board</a></li>
+
+                                <li role="separator" class="divider"></li>
+
+                                <li><a href="/stats">Stats</a></li>
+                                <li><a href="/resources/useful-links">Useful Links</a></li>
+                                <li><a href="http://audit.data.gov.ie">Data Audit Tool</a></li>
+
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+  
+    <div role="main" id="main-content">
+      <div id="content">
+        
+          
+
+          
+<header id="hero">
+    <div class="container">
+        <div class="row heroimg">
+            <div class="col-lg-12">
+                <div id="heropos" class="col-md-4">
+                    <div class="herodatabox whitetxt" style="width: 150px !important;">
+                        <h2>5509</h2>
+                        <span class="whitetxt">Datasets</span>
+                    </div>
+                    <div class="herosourcebox bluetxt">
+                        <h2>103</h2>
+                        <span class="bluetxt">Publishers</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-md-push-2 col-sm-12 search" id="searchh">
+                    <div class="row">
+                        <div class="search">
+                            <form class="navbar-form" role="search" action="/data/search">
+                                <div class="input-group" style="width:100%;">
+                                    <input id="herosearchbox" type="text" class="form-control"
+                                           placeholder="Search Datasets..." name="q" style="max-width: none;">
+                                    <div class="input-group-btn ">
+                                        <button id="herosearchbtn" class="btn btn-default btn-search" type="submit"><i
+                                                class="glyphicon glyphicon-search fa-2x"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="adv-search pull-right" style="margin-right:15px;"><a href="/data/advanced_search"
+                                                                                         style=" color:white; text-decoration:none;"
+                                                                                         onmouseover="this.style.color='#0092C9'"
+                                                                                         onmouseout="this.style.color='white';">Advanced
+                            Search</a></div>
+                    </div>
+                    <div class="row">
+
+                        <div class="herotextbox">
+                            <h2>IRELAND'S <strong>OPEN DATA</strong> PORTAL</h2>
+                            <p>Promoting innovation and transparency through the publication of Irish Public Sector data
+                                in open, free and reusable formats.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4 col-md-push-8">
+                            <a class="btn btn-default btn-search"
+                               style="width: 100%; height: 2.4em; border-radius:4px; " href="/data/search">Explore
+                                Datasets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+          <div class="container wrapper no-nav">
+
+            
+            
+            
+
+            
+              <div class="primary">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content">
+                        
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+<div class="container">
+    <!-- <div class="col-lg-12 "> -->
+    <!-- <h1 class="datah1">See datasets about...<h1> -->
+    <!-- </div> -->
+    <div class="row seven-cols button-row button-row-1" style="margin-top: 18px;">
+        <a href="/data/search?theme-primary=Agriculture">
+            <div class="col-md-1 buttoner agriculture">
+                <p>Agriculture, Fisheries, Forestry & Food</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Arts">
+            <div class="col-md-1 buttoner arts">
+                <p>Arts, Culture and Heritage</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Crime">
+            <div class="col-md-1 buttoner crime">
+                <p>Justice, Legal System, and Public Safety</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Economy">
+            <div class="col-md-1 buttoner economics">
+                <p>Economy and Finance</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Education">
+            <div class="col-md-1  buttoner education">
+                <p>Education and Sport</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Energy">
+            <div class="col-md-1 buttoner energy">
+                <p>Energy</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Environment">
+            <div class="col-md-1 buttoner enviro" style="overflow: hidden;">
+                <p>Environment</p>
+            </div>
+        </a>
+    </div>
+    <div class="row seven-cols button-row button-row-2">
+        <a href="/data/search?theme-primary=Government">
+            <div class="col-md-1 buttoner gov">
+                <p>Government and Public Sector</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Health">
+            <div class="col-md-1 buttoner health">
+                <p>Health</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Housing">
+            <div class="col-md-1 buttoner housing">
+                <p>Housing and Zoning</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Society">
+            <div class="col-md-1 buttoner society">
+                <p>Population and Society</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Science">
+            <div class="col-md-1 buttoner science">
+                <p>Science and Technology</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Towns">
+            <div class="col-md-1 buttoner towns">
+                <p>Regions and Cities</p>
+            </div>
+        </a>
+        <a href="/data/search?theme-primary=Transport">
+            <div class="col-md-1 buttoner transport" style="overflow:hidden;">
+                <p>Transport</p>
+            </div>
+        </a>
+    </div>
+</div>
+<section id="highlighted-content">
+    <div class="container">
+        <div class="row">
+            <div class="container" style="background-color: white; margin-top:20px;width:97%;">
+                <div class="col-md-7">
+                    <h2>Publication of the Open Data Strategy 2017 – 2022</h2>
+                    <p>We are delighted to welcome the publication of the Open Data Strategy 2017 – 2022, which builds
+                        on
+                        the substantial achievements made in implementing the Open Data Initiative and sets out a
+                        roadmap
+                        for continued progress and development.</p>
+                    <blockquote>
+                        “The Open Data Strategy provides a framework for data to be used to ensure that public services
+                        are
+                        delivered in a more effective and efficient manner and in a transparent and accountable way.”
+                    </blockquote>
+                    <i>- Patrick O’Donovan T.D., Minister of State with responsibility for Public Procurement, Open
+                        Government and eGovernment.</i>
+                    <p></p>
+
+                    <!--<p>The Open Data Strategy was developed by the Open Data Governance Board in conjunction with the Open-->
+                    <!--Data Unit in the Department of Public Expenditure & Reform and in consultation with a wide range of-->
+                    <!--stakeholders including public bodies, business, research/academia, library and information-->
+                    <!--professionals and civil society.</p>-->
+
+                    <p><a href="content/publication-open-data-strategy-2017-2022-blog-emer-coleman">Read the full
+                        update</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                    <div style="margin-top:15px;"><img src="/assets/img/ods1.png"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="container charts" style="padding-top: 18px;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-front-chart">
+                <div class="panel-heading">
+                    <h3>Third-Level Enrolment <a
+                            href="https://data.gov.ie/dataset/enrolments-of-full-time-students-thousand-by-year-and-level-of-education#&r=Year&c=Level%20of%20Education">
+                        <small>Data</small>
+                    </a></h3>
+                </div>
+                <div class="panel-body">
+                    <div id="enrolmentChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-front-chart">
+                <div class="panel-heading">
+                    <h3>VAT Registrations by Sector <a
+                            href="https://data.gov.ie/dataset/value-added-tax-vat-registrations-by-sector">
+                        <small>Data</small>
+                    </a></h3>
+                </div>
+                <div class="panel-body">
+                    <div id="taxChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-front-chart">
+                <div class="panel-heading">
+                    <h3>Pupil-Teacher Ratio <a
+                            href="https://data.gov.ie/dataset/pupil-teacher-ratio-ratio-by-year-and-type-of-educational-institution#&r=Year&c=Type%20of%20Educational%20Institution">
+                        <small>Data</small>
+                    </a></h3>
+                </div>
+                <div class="panel-body">
+                    <div id="ratioChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages: ['corechart']});
+
+        google.charts.setOnLoadCallback(taxChart);
+        google.charts.setOnLoadCallback(enrolmentChart);
+        google.charts.setOnLoadCallback(ratioChart);
+
+        $(window).on('resize', function () {
+            google.charts.setOnLoadCallback(taxChart);
+            google.charts.setOnLoadCallback(enrolmentChart);
+            google.charts.setOnLoadCallback(ratioChart);
+        });
+
+        var chartColors = ['#01aef0', '#ed423a', '#21a5ad', '#88994d', '#fed136'];
+
+        function taxChart() {
+            var wrapper = new google.visualization.ChartWrapper({
+                chartType: 'PieChart',
+                containerId: 'taxChart',
+                dataTable: google.visualization.arrayToDataTable([["sector", "number_registered"], ["Agriculture Forestry and Fishing", 11649], ["Mining and Quarrying", 426], ["Maufacturing", 14790], ["Electricity Gas Steam and Air Conditioning Supply", 696], ["Water Supply Sewerage and Waste Management", 1216], ["Construction", 47659], ["Wholesale and retail trade repair of motor vehicles and motorcycles", 44863], ["Transportation and Storage", 8763], ["Accommodation and Food Services", 16539], ["Information and Communication", 13665], ["Financial and Insurance Activities", 6353], ["Real Estate Activities", 17953], ["Professional Scientific and Technical Activities", 33805], ["Administrative and Support Service Activities", 12054], ["Public Administration and Defence", 1452], ["Education", 3917], ["Human Health and Social Work Activities", 1726], ["Arts Entertainment and Recreation", 4123], ["Other Services Activities", 7049], ["Activities of Households", 1487]]),
+                options: {
+                    legend: 'top',
+                    curveType: 'function',
+                    colors: chartColors,
+                    animation: {
+                        startup: true,
+                        duration: 440,
+                        easing: 'inAndOut'
+                    },
+                }
+            });
+            wrapper.draw();
+        }
+        function enrolmentChart() {
+            var enrolment = [["Year", "Full-Time Students in Third-Level Education (Number)"], [1966, 18449], [1967, 19101], [1968, 19626], [1969, 21003], [1970, 22585], [1971, 24414], [1972, 25482], [1973, 26490], [1974, 27135], [1975, 29911], [1976, 31730], [1977, 33571], [1978, 35237], [1979, 35675], [1980, 37425], [1981, 40613], [1982, 43231], [1983, 46335], [1984, 48411], [1985, 50836], [1986, 53473], [1987, 55016], [1988, 57221], [1989, 60747], [1990, 64137], [1991, 68165], [1992, 74449], [1993, 81050], [1994, 86624], [1995, 89693], [1996, 95099], [1997, 100204], [1998, 104439], [1999, 108509], [2000, 115696], [2001, 119991], [2002, 124589], [2003, 129283], [2004, 133887], [2005, 133691], [2006, 136719], [2007, 138362], [2008, 139134], [2009, 146068], [2010, 156973], [2011, 161647], [2012, 163068], [2013, 164863], [2014, 169254], [2015, 173649]];
+            var wrapper = new google.visualization.ChartWrapper({
+                chartType: 'LineChart',
+                containerId: 'enrolmentChart',
+                dataTable: google.visualization.arrayToDataTable(enrolment),
+                options: {
+                    legend: 'top',
+                    curveType: 'function',
+                    colors: chartColors,
+                    animation: {
+                        startup: true,
+                        duration: 440,
+                        easing: 'inAndOut'
+                    },
+                    backgroundColor: {
+                        strokeWidth: 0
+                    },
+                    hAxis: {
+                        gridlines: {
+                            color: 'transparent'
+                        },
+                        format: "####"
+                    },
+                    vAxis: {
+                        gridlines: {
+                            color: 'transparent'
+                        },
+                        format: "short"
+                    },
+                }
+            });
+            wrapper.draw();
+        }
+        function ratioChart() {
+            var ratio = [["Year", "First level education institutions", "Second level education institutions"], [2000, 20.3, 14.8], [2001, 19.2, 14], [2002, 18.4, 13.5], [2003, 18, 13.2], [2004, 17.1, 13.6], [2005, 17.1, 13.4], [2006, 16.6, 13.1], [2007, 16, 13.1], [2008, 16, 12.9], [2009, 15.9, 13], [2010, 16, 13.6], [2011, 15.7, 13.6], [2012, 16.2, 13.9], [2013, 16.4, 14.3], [2014, 16.3, 14.3], [2015, 16.2, 14.2], [2016, 16, 14.1]]
+            var wrapper = new google.visualization.ChartWrapper({
+                chartType: 'LineChart',
+                containerId: 'ratioChart',
+                dataTable: google.visualization.arrayToDataTable(ratio),
+                options: {
+                    legend: 'top',
+                    colors: chartColors,
+                    curveType: 'function',
+                    animation: {
+                        startup: true,
+                        duration: 440,
+                        easing: 'inAndOut'
+                    },
+                    backgroundColor: {
+                        strokeWidth: 0
+                    },
+                    hAxis: {
+                        gridlines: {
+                            color: 'transparent'
+                        },
+                        format: "####"
+                    },
+                    vAxis: {
+                        gridlines: {
+                            color: 'transparent'
+                        },
+                        format: "short"
+                    },
+                }
+            });
+            wrapper.draw();
+        }
+    </script>
+</div>
+
+
+<!--START VIZ CAROUSEL-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<div class="container">-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-md-offset-4 col-md-4 ">-->
+            <!--<select class="form-control county-selector" id="src-county">-->
+                <!--<option value="" disabled selected>Filter by county...</option>-->
+                <!--<option value="carlow">Carlow</option>-->
+                <!--<option value="cavan">Cavan</option>-->
+                <!--<option value="clare">Clare</option>-->
+                <!--<option value="cork">Cork</option>-->
+                <!--<option value="donegal">Donegal</option>-->
+                <!--<option value="dublin">Dublin</option>-->
+                <!--<option value="galway">Galway</option>-->
+                <!--<option value="kerry">Kerry</option>-->
+                <!--<option value="kildare">Kildare</option>-->
+                <!--<option value="kilkenny">Kilkenny</option>-->
+                <!--<option value="laois">Laois</option>-->
+                <!--<option value="leitrim">Leitrim</option>-->
+                <!--<option value="limerick">Limerick</option>-->
+                <!--<option value="longford">Longford</option>-->
+                <!--<option value="louth">Louth</option>-->
+                <!--<option value="mayo">Mayo</option>-->
+                <!--<option value="meath">Meath</option>-->
+                <!--<option value="offaly">Offaly</option>-->
+                <!--<option value="roscommon">Roscommon</option>-->
+                <!--<option value="sligo">Sligo</option>-->
+                <!--<option value="tipperary">Tipperary</option>-->
+                <!--<option value="waterford">Waterford</option>-->
+                <!--<option value="westmeath">Westmeath</option>-->
+                <!--<option value="wexford">Wexford</option>-->
+                <!--<option value="wicklow">Wicklow</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+        <!--&lt;!&ndash;<select class="form-control" id="src-year">&ndash;&gt;-->
+        <!--&lt;!&ndash;<option value="" disabled selected>by year...</option>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</select>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+        <!--&lt;!&ndash;<select class="form-control" id="src-else">&ndash;&gt;-->
+        <!--&lt;!&ndash;<option value="" disabled selected>something else...</option>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</select>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+
+            <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
+                <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+                <!--&lt;!&ndash;<ol class="carousel-indicators">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li data-target="#carousel-example-generic" data-slide-to="1"></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ol>&ndash;&gt;-->
+
+                <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+                <!--<div class="carousel-inner">-->
+                    <!--<div class="item active">-->
+                        <!--<div class="  col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">Help to Buy Incentive scheme 2017</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-home faicons" style="color:#01aef0"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart1"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"&ndash;&gt;-->
+                                <!--&lt;!&ndash;alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/help-to-buy-htb-incentive-statistics">view-->
+                                <!--source</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">Local Property Tax Statistics 2016</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-euro faicons" style="color:#ffbf00"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart2"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"&ndash;&gt;-->
+                                <!--&lt;!&ndash;alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/local-property-tax-lpt-statistics-2016">view-->
+                                <!--source</a></div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">General Election 2016</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-thumbs-up faicons" style="color:#07a010;"></i><i-->
+                                        <!--class="fa fa-thumbs-down faicons" style="color:#ed423a;"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart3"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/department-of-housing-planning-community-and-local-government">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<img src="dhpclg.jpg" alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/general-election-2016-constituency-details">view-->
+                                <!--source</a></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="item">-->
+                        <!--<div class="col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">Employers with 500+ Employees</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-users faicons" style="color:#c7820e"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart4"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"&ndash;&gt;-->
+                                <!--&lt;!&ndash;alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/breakdown-by-county-of-the-range-of-employments-by-employers">view-->
+                                <!--source</a></div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">Stamp Duty: Total Taxpayers</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-euro faicons" style="color:#ffbf00"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart5"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"&ndash;&gt;-->
+                                <!--&lt;!&ndash;alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/breakdown-of-stamp-duty-returns">view-->
+                                <!--source</a></div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4 panel-viz panel panel-default text-center">-->
+                            <!--<div class="panel-heading panel-heading-dgi">Corporation Tax receipts 2011-2015</div>-->
+                            <!--<div class="panel-body panel-body-dgi text-center">-->
+                                <!--<div><i class="fa fa-euro faicons" style="color:#ffbf00"></i></div>-->
+                                <!--<hr>-->
+                                <!--<span id="chart6"></span>-->
+                                <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+
+                                <!--&lt;!&ndash;<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"&ndash;&gt;-->
+                                <!--&lt;!&ndash;alt=""></a>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div class="panel-footer text-center"><a-->
+                                    <!--href="https://data.gov.ie/dataset/revenue-net-receipts-by-county">view-->
+                                <!--source</a></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+                <!--</div>-->
+
+                <!--&lt;!&ndash; Controls &ndash;&gt;-->
+                <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+                    <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+                <!--</a>-->
+                <!--<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+                    <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                <!--</a>-->
+            <!--</div> &lt;!&ndash; Carousel &ndash;&gt;-->
+
+
+
+    <!--END OF CAROUSEL-->
+
+
+    <!--<div class="row">-->
+    <!--<div class="col-md-3">-->
+    <!--<div class="panel panel-default text-center">-->
+    <!--<div class="panel-heading">Help to Buy Incentive scheme 2017</div>-->
+    <!--<div class="panel-body text-center">-->
+    <!--<div><img class="icon-img"-->
+    <!--src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/home-512.png"-->
+    <!--alt=""></div>-->
+    <!--<hr>-->
+    <!--<span id="chart1"></span>-->
+    <!--<hr>-->
+
+    <!--<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"-->
+    <!--alt=""></a>-->
+    <!--</div>-->
+    <!--<div class="panel-footer text-center"><a-->
+    <!--href="https://data.gov.ie/dataset/help-to-buy-htb-incentive-statistics">view source</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+    <!--<div class="panel panel-default text-center">-->
+    <!--<div class="panel-heading">Local Property Tax Statistics 2016</div>-->
+    <!--<div class="panel-body text-center">-->
+    <!--<div><img class="icon-img"-->
+    <!--src="https://cdn3.iconfinder.com/data/icons/glypho-money-and-finance/64/money-dollar-circle-512.png"-->
+    <!--alt=""></div>-->
+    <!--<hr>-->
+    <!--<span id="chart2"></span>-->
+    <!--<hr>-->
+    <!--<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"-->
+    <!--alt=""></a>-->
+    <!--</div>-->
+    <!--<div class="panel-footer text-center"><a-->
+    <!--href="https://data.gov.ie/dataset/local-property-tax-lpt-statistics-2016">view source</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+    <!--<div class="panel panel-default text-center">-->
+    <!--<div class="panel-heading">General Election 2016</div>-->
+    <!--<div class="panel-body text-center">-->
+    <!--<div><img class="icon-img"-->
+    <!--src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/home-512.png"-->
+    <!--alt=""></div>-->
+    <!--<hr>-->
+    <!--<span id="chart3"></span>-->
+    <!--<hr>-->
+
+    <!--<a href="https://data.gov.ie/publisher/department-of-housing-planning-community-and-local-government">-->
+    <!--<img src="dhpclg.jpg" alt=""></a>-->
+    <!--</div>-->
+    <!--<div class="panel-footer text-center"><a-->
+    <!--href="https://data.gov.ie/dataset/general-election-2016-constituency-details">view-->
+    <!--source</a></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+    <!--<div class="panel panel-default text-center">-->
+    <!--<div class="panel-heading">Employers with 500+ Employees</div>-->
+    <!--<div class="panel-body text-center">-->
+    <!--<div><img class="icon-img"-->
+    <!--src="https://cdn3.iconfinder.com/data/icons/glypho-money-and-finance/64/money-dollar-circle-512.png"-->
+    <!--alt=""></div>-->
+    <!--<hr>-->
+    <!--<span id="chart4"></span>-->
+    <!--<hr>-->
+
+    <!--<a href="https://data.gov.ie/publisher/revenue-commissioners"> <img src="revenue_logo.png"-->
+    <!--alt=""></a>-->
+    <!--</div>-->
+    <!--<div class="panel-footer text-center"><a-->
+    <!--href="https://data.gov.ie/dataset/breakdown-by-county-of-the-range-of-employments-by-employers">view-->
+    <!--source</a></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<hr>-->
+    <!--</div>-->
+
+
+</div>
+
+
+<!--START SCRIPT HERE-->
+
+<!--<script>-->
+
+
+    <!--$.get("https://data.gov.ie/data/preview/b7be8063-6ca8-4694-aff3-c2ba34436a42", function (d, status) {-->
+
+        <!--var totalIncentives = 0;-->
+        <!--d.data.forEach(function (el) {-->
+            <!--if (el[1] != "&lt; or =  10") {-->
+
+                <!--totalIncentives += parseInt(el[1]);-->
+            <!--}-->
+
+        <!--});-->
+        <!--$("#chart1").text(totalIncentives.toLocaleString() + " homes")-->
+    <!--});-->
+    <!--$.get("https://data.gov.ie/data/preview/a28f03f5-20c6-4f2e-92fa-7d5f75a361ae", function (d, status) {-->
+        <!--var totalTaxation = 0;-->
+        <!--d.data.forEach(function (el) {-->
+
+
+            <!--totalTaxation += parseFloat(el[3]);-->
+
+        <!--});-->
+        <!--$("#chart2").text("€" + totalTaxation.toLocaleString() + "m collected")-->
+    <!--});-->
+
+    <!--$.get("https://data.gov.ie/data/preview/ba2972d3-31a7-4390-88e8-aa9c32c47215", function (d, status) {-->
+        <!--var totalVotes = 0;-->
+        <!--d.data.forEach(function (el) {-->
+
+
+            <!--totalVotes += parseInt(el[12]);-->
+
+        <!--});-->
+        <!--$("#chart3").text(totalVotes.toLocaleString() + " votes")-->
+    <!--});-->
+
+    <!--$.get("https://data.gov.ie/data/preview/52cd1ffc-a48d-4cc6-a08e-9e80d7081ea0", function (d, status) {-->
+
+        <!--var totalEmployers = 0;-->
+        <!--d.data.forEach(function (el) {-->
+            <!--if (el[2] >= 499) {-->
+
+                <!--totalEmployers += parseInt(el[4]);-->
+            <!--}-->
+
+        <!--});-->
+        <!--$("#chart4").text(totalEmployers.toLocaleString() + " employers")-->
+    <!--});-->
+
+    <!--$.get("https://data.gov.ie/data/preview/0cb70a15-6d55-41af-8cec-bf537af1385a", function (d, status) {-->
+
+        <!--var totalTaxpayers = 0;-->
+        <!--d.data.forEach(function (el) {-->
+
+            <!--totalTaxpayers += parseInt(el[3]);-->
+
+        <!--});-->
+        <!--$("#chart5").text(totalTaxpayers.toLocaleString() + " taxpayers")-->
+    <!--});-->
+
+    <!--$.get("https://data.gov.ie/data/preview/31592a41-0c98-45b0-8cbc-5a8f7a86a96e", function (d, status) {-->
+
+        <!--var totalTax = 0;-->
+        <!--d.data.forEach(function (el) {-->
+
+            <!--totalTax += parseInt(el[5]);-->
+
+        <!--});-->
+        <!--$("#chart6").text("€ " + totalTax.toFixed(2).toLocaleString() + "m")-->
+    <!--});-->
+
+
+    <!--$("#src-county").on('change', function (event) {-->
+        <!--event.preventDefault();-->
+        <!--countyName = $("#src-county").val();-->
+        <!--$.get("https://data.gov.ie/data/preview/b7be8063-6ca8-4694-aff3-c2ba34436a42", function (d, status) {-->
+            <!--d.data.forEach(function (el) {-->
+                <!--if (el[0].toLowerCase() == countyName) {-->
+                    <!--if (el[1] == "&lt; or =  10") {-->
+                        <!--$("#chart1").text("No Data")-->
+                    <!--}-->
+                    <!--else {-->
+                        <!--$("#chart1").text(el[1].toLocaleString() + " homes")-->
+                    <!--}-->
+                <!--}-->
+            <!--});-->
+        <!--});-->
+
+        <!--$.get("https://data.gov.ie/data/preview/a28f03f5-20c6-4f2e-92fa-7d5f75a361ae", function (d, status) {-->
+            <!--var countyTotal = 0;-->
+            <!--d.data.forEach(function (el) {-->
+
+                <!--if (el[1].toLowerCase().indexOf(countyName) >= 0) {-->
+                    <!--countyTotal += parseFloat(el[3]);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#chart2").text("€" + countyTotal.toFixed(1).toLocaleString() + "m collected");-->
+        <!--});-->
+
+        <!--$.get("https://data.gov.ie/data/preview/ba2972d3-31a7-4390-88e8-aa9c32c47215", function (d, status) {-->
+            <!--var totalVotes = 0;-->
+            <!--d.data.forEach(function (el) {-->
+
+
+                <!--if (el[0].toLowerCase().indexOf(countyName) >= 0) {-->
+                    <!--totalVotes += parseInt(el[12]);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#chart3").text(totalVotes.toLocaleString() + " votes")-->
+        <!--});-->
+
+        <!--$.get("https://data.gov.ie/data/preview/52cd1ffc-a48d-4cc6-a08e-9e80d7081ea0", function (d, status) {-->
+
+            <!--var totalEmployers = 0;-->
+            <!--d.data.forEach(function (el) {-->
+                <!--if (el[2] >= 499 && el[1].toLowerCase().indexOf(countyName) >= 0) {-->
+
+                    <!--totalEmployers += parseInt(el[4]);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#chart4").text(totalEmployers + " employers")-->
+        <!--});-->
+
+        <!--$.get("https://data.gov.ie/data/preview/0cb70a15-6d55-41af-8cec-bf537af1385a", function (d, status) {-->
+
+            <!--var totalTaxpayers = 0;-->
+            <!--d.data.forEach(function (el) {-->
+                <!--if (el[0].toLowerCase().indexOf(countyName) >= 0) {-->
+                    <!--totalTaxpayers += parseInt(el[3]);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#chart5").text(totalTaxpayers.toLocaleString() + " taxpayers")-->
+        <!--});-->
+
+        <!--$.get("https://data.gov.ie/data/preview/31592a41-0c98-45b0-8cbc-5a8f7a86a96e", function (d, status) {-->
+
+            <!--var totalTax = 0;-->
+            <!--d.data.forEach(function (el) {-->
+                <!--if (el[0].toLowerCase().indexOf(countyName) >= 0) {-->
+                    <!--totalTax += parseFloat(el[5]);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#chart6").text("€ " + totalTax.toFixed(2).toLocaleString() + "m")-->
+        <!--});-->
+    <!--});-->
+
+
+<!--</script>-->
+
+<div class="container">
+    <style>
+        .panel-footer {
+            position: absolute;
+            bottom: 0;
+            right: 32px;
+            margin-bottom: 35px;
+        }
+    </style>
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="panel panel-front">
+                <h3 class="panelheaders">Technical Framework</h3>
+                <div class="panel-body">
+                    <p>Read the technical framework which underpins the publication of open datasets</p>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-xl green" href="/technical-framework">Read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-front">
+                <h3 class="panelheaders">Re-use of Public Sector Information</h3>
+                <div class="panel-body">
+                    <p>Access documentation regarding the re-use of Public Sector Information in Ireland</p>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-xl red" href="/psi">Read More</a>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-3">
+            <div class="panel panel-front">
+                <h3 class="panelheaders">e-Learning</h3>
+                <div class="panel-body">
+                    <p>Access Open Data course modules provided by the European Data Portal</p>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-xl yellow" href="/edpelearning" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-3">
+            <div class="panel panel-front">
+                <h3 class="panelheaders">Training/Support <br>for Public Bodies</h3>
+                <div class="panel-body">
+                    <p>Open Data Training and Technical Support available for Public Bodies</p>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-xl dri-green" href="/content/national-technical-framework">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-front panel-front-no-fixed-height">
+                <div class="panel-body panel-front-body-no-fixed-height">
+                    <div class="col-md-8">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cIGlt4Y9vVc"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <p>Source: <a href="https://www.europeandataportal.eu">European Data Portal (CC BY 3.0)</a></p>
+                    </div>
+                    <div class="col-md-4 text-left">
+            <div class="panel hidden-lg latest-news">
+                <h4 class="panelheaders" style="border-radius: 4px 4px 0px 0px">Latest News</h4>
+                <div class="panel-body" style="height:385px"></div>
+            </div>
+            <div class="panel visible-lg panel-front latest-news" style="height:385px">
+                <h3 class="panelheaders" style="border-radius: 4px 4px 0px 0px">Latest News</h3>
+                <div class="panel-body"></div>
+            </div>
+        </div>
+                    <!--<div class="col-md-4">-->
+                        <!--<p>Greater use and re-use of open data has many potential benefits including assisting public-->
+                            <!--administrations to work more efficiently and with greater transparency. There are follow on-->
+                            <!--benefits to citizens, business and the economy in terms of access to information,-->
+                            <!--encouragement of innovation and economic activity.</p>-->
+                        <!--<p>This short video released by the European Data Portal explains what open (government) data-->
+                            <!--is, its potential benefits and how to access the European Data Portal. The European Data-->
+                            <!--Portal harvests data from national portals including <a href="/">data.gov.ie</a></p>-->
+                        <!---->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function timeSince(date) {
+        var seconds = Math.floor((new Date() - date) / 1000);
+
+        var interval = Math.floor(seconds / 31536000);
+
+        if (interval > 1) {
+            return interval + " years";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+            return interval + " months";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+            return interval + " days";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+            return interval + " hours";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+            return interval + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+    }
+
+    String.prototype.trunc = String.prototype.trunc ||
+        function (n) {
+            return (this.length > n) ? this.substr(0, n - 1) + '&hellip;' : this;
+        };
+
+    var itemsToShow = 3;
+    var itemsShown = 0;
+
+    $.get('/rss.xml', function (data) {
+        var items = $(data).find('item');
+        for (var i = 0; i < items.length; i++) {
+            if (itemsShown == itemsToShow) return;
+            var item = items[i];
+            var title = $(items[i]).find('title')[0];
+            var link = $(items[i]).find('link')[0];
+            if ($(link).text().indexOf('content') == -1) continue;
+            var creator = $(items[i]).find('creator')[0];
+            if (!creator) creator = $(items[i]).find('dc\\:creator')[0];
+            var pubDate = ($(items[i]).find('pubDate')[0])
+            pubDate = timeSince(Date.parse($(pubDate).text()));
+
+            var postTitleHtml = '<div class="post-title col-md-12"><h3 class="node-title"><a href="' + $(link).text() + '">' + $(title).text().trunc(50) + '</a></h3></div>';
+            var postMetaHtml = '<div class="post-meta col-md-12"><span>Submitted by <a href="/users/' + $(creator).text() + '" title="View user profile." class="username">' + $(creator).text() + ' </a>' + pubDate + ' ago</span></div>';
+
+            var hrHtml = (itemsShown + 1 != itemsToShow) ? '<hr>' : '';
+            $(".latest-news .panel-body").append('<div class="row post">' + postTitleHtml + postMetaHtml + '</div>' + hrHtml);
+            itemsShown++;
+        }
+
+    }, 'xml');
+</script>
+
+<style>
+    .panel-front-no-fixed-height {
+        height: auto;
+    }
+
+    .panel-front-body-no-fixed-height {
+        height: auto !important;
+    }
+
+    .embed-responsive {
+        position: relative;
+        display: block;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .embed-responsive .embed-responsive-item,
+    .embed-responsive iframe,
+    .embed-responsive embed,
+    .embed-responsive object,
+    .embed-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+
+    .embed-responsive-16by9 {
+        padding-bottom: 56.25%;
+    }
+
+    .embed-responsive-4by3 {
+        padding-bottom: 75%;
+    }
+
+    .panelheaders {
+        height: 75px;
+    }
+</style>
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+
+            
+                
+                
+            
+          </div>
+        
+      </div>
+    </div>
+
+    
+<div class="footer">
+    <div id="footer-lower" class="row" style="padding-top: 12px;">
+        <div class="col-lg-12">
+            <div class="container contact-details">
+                <div class="col-md-4 social text-center">
+                    <ul>
+                        <li>
+                            <a href="http://twitter.com/GovDataIE">
+                                <p> <span class="icon-twitter"></span> @GovDataIE </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/IRLDeptPER">
+                                <p> <span class="icon-twitter"></span> @IRLDeptPER </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:opendata@per.gov.ie">
+                                <p> <span class="icon-envelope"></span> opendata@per.gov.ie </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:35316767571">
+                                <p> <span class="icon-phone"></span> +353 1 6767571 </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <address>
+                        Open Data Unit<br/>
+                        Dept of Public Expenditure &amp; Reform,<br/>
+                        7-9 Merrion Row,<br/>
+                        Dublin 2, Ireland.
+                    </address>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p>Powered by <a href="http://ckan.org"><img id="ckan-logo" src="/assets/img/ckan-logo.png" alt="CKAN logo"/></a></p>
+                    <p>Site by <a href="https://derilinx.com">Derilinx</a></p>
+                    <p><a href="http://per.gov.ie">Department of Public Expenditure and Reform</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--google analytics-->
+<script type="text/javascript">
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-59685031-1', 'auto');
+ ga('set', 'anonymizeIp', true);
+ ga('send', 'pageview');
+</script>
+
+  
+
+  
+
+      
+  </body>
+</html>

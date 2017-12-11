@@ -1,0 +1,65 @@
+Information Management 2017 referencing Assignment
+
+Your task is to submit a 2 page summary of a field or topic in Computing in which you are interested. This can be around a project area that you are interested in or around another topic. 
+
+You should include at least 6 references for your topic. Of these there should be 1 reference from a book, 1 reference from an academic journal, 1 reference from from a news article, 1 reference from a company white paper, one web reference and one blog or social media reference.
+
+You should rate the references on a 'quality' scale (1 - lowest rating, 10 = highest rating) for the following qualities:
+
+Authority (Well founded, well trusted)
+
+Currency (Up to date)
+
+Relevance (Relevant to your core topic/ idea)
+
+Independence
+
+Originality
+
+Also outline which you think are the best references and why.
+
+
+
+Some Tips on Topics: 
+
+You may choose a topic relevant to your project area, this then helps with your project write-up.
+
+You may choose a topic not relevant to your project in which your are interested.
+
+There should be an aspect of IT in your topic, ideally discussing how changes in IT are impacting on the area.
+
+Don't choose too wide a topics - eg 'Information Security' or 'Cloud Computing' -these are very wide topics which it is difficult to be original about (even 'Security in the Cloud' is too wide unless you are looking at something specific). Pick instead an aspect of a topic where you can show the work you have done.
+
+NOTE: Submission date is as per Moodle. There will be no penalty for late submission before December 1 but uploads on time will attract a 10% bonus.
+
+SOME FEEDBACK COMMENTS IN RELATION TO PREVIOUS ATTEMPTS...
+
+
+
+Previous Comments on Referencing CA
+
+Formatting, poor. Good range of refs
+Good referencing.
+Well put together
+Good pres. Article wanders.
+Excellent ,clear, well founded
+Excellent, readable, well referenced.
+Not annotated in text - cannot track comments to refs. Analysis ok
+Well presented, very good work. First sentence not clear.
+Excellent.
+Article veers over too wide a range. Using reference on 'future' from 2007 not appropriate.
+Reference quality not fully assessed. Presentation could be better.
+Non-standard use of colour in text. Otherwise good
+Many un-referenced assertions made. Good assessment
+Article need more focus. Refs good
+Some inaccuracies not backed up with refs.
+References a little dated for a developing area. Generally readable
+good work
+Not clear what is referenced in text.
+Slightly dated refs for moving area.
+First person pov not appropriate.
+Comments on references not substantiated
+Some errors, article not clear on scalability. Ref5 not relevant
+Good focus at start becomes more scattered. Would need a little more back-up for critical comments.
+Good work
+Old refs for tech subject.
