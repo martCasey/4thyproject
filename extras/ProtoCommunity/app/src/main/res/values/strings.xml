@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ProtoCommunity</string>
+    <string name="hello">Hello, lets see what organisations are available</string>
+    <string name="start">Start App</string>
+    <string name="selectInfo1">Press the button to the right to display the information about all the organisations available</string>
+    <string name="selection1">Display All</string>
+    <string name="selectionInfo2">Or enter the type of organisation you want displayed in the text bar below and press \'Search\'</string>
+    <string name="selectionInfo3">Enter organisation type here</string>
+    <string name="selection2">Search</string>
+</resources>
