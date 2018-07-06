@@ -1,7 +1,5 @@
 package com.example.admin.protocommunity;
 
-enum Type {football, basketball, ruby, ballet, chess, go_karting}
-
 public class Organisation {
 
     //class used to store hardcoded values of organisations in the app (for now)
@@ -9,8 +7,7 @@ public class Organisation {
     //variables
     String name;
     String address;
-    //enum
-    Type type;
+    String type;
     int noSlots;        //number of slots available
 
     //default constructor
@@ -20,7 +17,7 @@ public class Organisation {
     }
 
     //constructor
-    public Organisation(String nameIn, String addressIn, Type typeIn, int noSlotsIn)
+    public Organisation(String nameIn, String addressIn, String typeIn, int noSlotsIn)
     {
         this.name = nameIn;
         this.address = addressIn;
@@ -39,7 +36,7 @@ public class Organisation {
         return this.address;
     }
 
-    public Type getType()
+    public String getType()
     {
         return this.type;
     }
@@ -60,7 +57,7 @@ public class Organisation {
         this.address = addressIn;
     }
 
-    public void setType(Type typeIn)
+    public void setType(String typeIn)
     {
         this.type = typeIn;
     }

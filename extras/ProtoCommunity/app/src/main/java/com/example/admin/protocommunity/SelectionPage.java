@@ -10,7 +10,8 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class SelectionPage extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.example.protoCommunity.MESSAGE";
+    //public static final String EXTRA_MESSAGE = "com.example.protoCommunity.MESSAGE";
+    public static final String EXTRA_MESSAGE = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
