@@ -11,7 +11,12 @@ public class DisplayOrganisation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_organisation);
+    }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        // put your code here...
         //first need to create an array of organisations
         Organisation[] organisations = new Organisation[]
                 {new Organisation("Kickers", "45 Shark Lane", "football", 3),
@@ -26,6 +31,7 @@ public class DisplayOrganisation extends AppCompatActivity {
         String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);
         message = GetOrganisationInfo(message, organisations);
         DisplayToView(message);
+
     }
 
 

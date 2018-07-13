@@ -7,4 +7,5 @@
     <string name="selectionInfo2">Or enter the type of organisation you want displayed in the text bar below and press \'Search\'</string>
     <string name="selectionInfo3">Enter organisation type here</string>
     <string name="selection2">Search</string>
+    <string name="placeholder">Text</string>
 </resources>
