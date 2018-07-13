@@ -8,4 +8,7 @@
     <string name="selectionInfo3">Enter organisation type here</string>
     <string name="selection2">Search</string>
     <string name="placeholder">Text</string>
+    <string name="placeHolder">PlaceHolderImage</string>
+    <string name="placeHolder">PlaceHolderImage</string>
+    <string name="organisation">Organisation Name</string>
 </resources>
