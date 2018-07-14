@@ -9,6 +9,6 @@
     <string name="selection2">Search</string>
     <string name="placeholder">Text</string>
     <string name="placeHolder">PlaceHolderImage</string>
-    <string name="placeHolder">PlaceHolderImage</string>
     <string name="organisation">Organisation Name</string>
+    <string name="organisationAddress"><u>Organisation Address</u></string>
 </resources>
