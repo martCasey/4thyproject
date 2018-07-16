@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectionPage" />
-        <activity android:name=".DisplayOrganisation"></activity>
+        <activity android:name=".DisplayOrganisation" />
+        <activity android:name=".ListResults"></activity>
     </application>
 
 </manifest>

@@ -19,9 +19,15 @@ public class SelectionPage extends AppCompatActivity {
     }
 
     //Called when the user taps the Display all button
-    public void displayAll(View view)
+    /*public void displayAll(View view)
     {
         Intent intent = new Intent(this, DisplayOrganisation.class);
+        startActivity(intent);
+    }*/
+
+    public void displayAll(View view)
+    {
+        Intent intent = new Intent(this, ListResults.class);
         startActivity(intent);
     }
 
