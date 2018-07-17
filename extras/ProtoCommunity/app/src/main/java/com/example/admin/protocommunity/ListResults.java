@@ -32,9 +32,7 @@ public class ListResults extends ListActivity {
                         new String("Kart Masters")};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_list_item_1, organisationsNames);
-
-        ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        setListAdapter(adapter);
 
     }
 }
