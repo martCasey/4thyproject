@@ -40,7 +40,7 @@ public class DisplayOrganisation extends AppCompatActivity {
         address = GetOrganisationInfo(address, message, organisations, 2);
         type = GetOrganisationInfo(type, message, organisations, 3);
         DisplayToView(name, address, type);
-
+        //This is the fixDetails Branch
     }
 
 
