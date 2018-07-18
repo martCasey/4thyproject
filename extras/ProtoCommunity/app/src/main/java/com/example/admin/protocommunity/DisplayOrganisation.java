@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.widget.TextView;
+
+import static java.sql.Types.NULL;
+
 //this is the changed version of the file
 public class DisplayOrganisation extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class DisplayOrganisation extends AppCompatActivity {
         String name = "";
         String address = "";
         String type = "";
-        String about = "";
+        String about;
         //first need to create an array of organisations
         Organisation[] organisations = new Organisation[]
                 {new Organisation("Kickers", "45 Shark Lane", "football", 3),
@@ -35,57 +38,67 @@ public class DisplayOrganisation extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);
-        name = GetOrganisationInfo(name, message, organisations, 1);
-        address = GetOrganisationInfo(address, message, organisations, 2);
-        type = GetOrganisationInfo(type, message, organisations, 3);
+        String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);        //now we recieve the organisation name, not the type
+        name = FindName(message, organisations);
+        type = FindType(message, organisations);
+        address = FindAddress(name, organisations);
         DisplayToView(name, address, type);
         //This is the fixDetails Branch
     }
 
 
-    public String GetOrganisationInfo(String info, String typeIn, Organisation[] arrayIn, int section) {
-        switch (section)
+    //get the type of the organisation from the message, we will only have the name of the organisation to work with
+    public String FindType(String messageIn, Organisation[] arrayIn)
+    {
+        int checked = 0;
+        for(int i = 0; i < arrayIn.length; i++)
         {
-            case 0:
-                info = GetAllOrganisationInfo(typeIn, arrayIn);
-                break;
-            case 1://section 1
-                //loop to print details of organisation
-                for (int i = 0; i < arrayIn.length; i++) {
-                    if (arrayIn[i].getType().equalsIgnoreCase(typeIn)) {
-                        info = arrayIn[i].getName();
-                    }
-                }
-                break;
-            case 2://section 2
-                //loop to print details of organisation
-                for (int i = 0; i < arrayIn.length; i++) {
-                    if (arrayIn[i].getType().equalsIgnoreCase(typeIn)) {
-                        info = arrayIn[i].getAddress();
-                    }
-                }
-                break;
-            case 3://section 3
-                //loop to print details of organisation
-                for (int i = 0; i < arrayIn.length; i++) {
-                    if (arrayIn[i].getType().equalsIgnoreCase(typeIn)) {
-                        info = arrayIn[i].getType();
-                    }
-                }
-                break;
-            case 4://section 4
-                //loop to print details of organisation
-                for (int i = 0; i < arrayIn.length; i++) {
-                    if (arrayIn[i].getType().equalsIgnoreCase(typeIn)) {
-                        info = "Will be replaced later";
-                    }
-                }
-                break;
-                default://section 5
-                    break;
+            if(messageIn.equalsIgnoreCase(arrayIn[i].getName()))
+            {
+                messageIn = arrayIn[i].getType();
+                checked++;
+            }
         }
-        return info;
+        if(checked != 1)
+        {
+            messageIn = FindName(messageIn, arrayIn);
+            messageIn = FindType(messageIn, arrayIn);
+        }
+        return messageIn;
+    }
+
+    //get the name of the organisation from the message, we will only have the type of the organisation to work with
+    public String FindName(String messageIn, Organisation[] arrayIn)
+    {
+        int checked = 0;
+        for(int i = 0; i < arrayIn.length; i++)
+        {
+            if(messageIn.equalsIgnoreCase(arrayIn[i].getType()))
+            {
+                messageIn = arrayIn[i].getName();
+                checked++;
+            }
+        }
+        if(checked != 1)
+        {
+            messageIn = FindType(messageIn, arrayIn);
+            messageIn = FindName(messageIn, arrayIn);
+        }
+        return messageIn;
+    }
+
+    //get the address of the organisation from either the name or type you acquired in the prior methods
+    public String FindAddress(String nameIn, Organisation[] arrayIn)
+    {
+        String addressOut = "";
+        for(int i = 0; i < arrayIn.length; i++)
+        {
+            if(arrayIn[i].getName().equalsIgnoreCase(nameIn))
+            {
+                addressOut = arrayIn[i].getAddress();
+            }
+        }
+        return addressOut;
     }
 
     public String GetAllOrganisationInfo(String messageIn, Organisation[] arrayIn) {
