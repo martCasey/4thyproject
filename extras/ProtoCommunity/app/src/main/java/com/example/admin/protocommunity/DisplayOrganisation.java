@@ -59,6 +59,7 @@ public class DisplayOrganisation extends AppCompatActivity {
                 checked++;
             }
         }
+        //If either the name or type are misspelled, then an infinite loop will occur, and the activity won't starts
         if(checked != 1)
         {
             messageIn = FindName(messageIn, arrayIn);
