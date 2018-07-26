@@ -125,4 +125,6 @@ public class DisplayOrganisation extends AppCompatActivity {
         content2.setSpan(new UnderlineSpan(), 0, content2.length(), 0);
         textView7.setText(content2);
     }
+
+    //volley code is likely to go here and make use of the text view
 }
