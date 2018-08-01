@@ -2,6 +2,7 @@ package com.example.admin.volleysample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+//https://www.youtube.com/watch?v=y2xtLqP8dSQ
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextViewResult;
@@ -30,15 +31,16 @@ public class MainActivity extends AppCompatActivity {
         //setting up text view
         mTextViewResult = findViewById(R.id.text_view_result);
         //set up button
-        Button buttonparse = findViewById(R.id.button_parse);
+        Button buttonParse = findViewById(R.id.button_parse);
 
         //volley instance
         mQueue = Volley.newRequestQueue(this);      //the "this" context means the queue is being used for the results of this activity
 
         //activated when the button is clicked on
-        buttonparse.setOnClickListener(new View.OnClickListener() {
+        buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("Check","Hey can you read me");
                 //what you want to happen after the button is pressed is coded in this method
                 JsonParse();
             }
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void JsonParse()
     {
-        String url = "https://api.myjson.com/bins/170psq";
+        String url = "https://api.myjson.com/bins/10sft4";//fine
         //our file is a JSON object, so we need this request type
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                             for(int i = 0; i < jsonArray.length(); i++)
                             {
                                 //need this JSON object to store values
+                                Log.d("Loop", "Please see me");
                                 JSONObject employee = jsonArray.getJSONObject(i);
                                 //we need these variables to store the values
                                 String firstName = employee.getString("firstname");
@@ -79,5 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 error.printStackTrace();
             }
         });
+        mQueue.add(request);
     }
 }
