@@ -5,7 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static java.sql.Types.NULL;
 
@@ -23,91 +33,56 @@ public class DisplayOrganisation extends AppCompatActivity {
         super.onResume();
         // put your code here...
         //strings used to display organisation details
-        String name = "";
-        String address = "";
-        String type = "";
-        String about;
-        //first need to create an array of organisations
-        Organisation[] organisations = new Organisation[]
-                {new Organisation("Kickers", "45 Shark Lane", "football", 3),
-                        new Organisation("HoopMasters", "56 Big Road", "basketball", 2),
-                        new Organisation("Tacklers", "77 Blue Street", "ruby", 4),
-                        new Organisation("Swan Toes", "66 Grace Lane", "ballet", 3),
-                        new Organisation("Chess Domain", "17 Oliver Park", "chess", 2),
-                        new Organisation("Kart Masters", "67 Speed Lane", "go_karting", 1)};
+        JsonParse();
+    }
 
+    //JSON Code
+    private void JsonParse()
+    {
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);        //now we recieve the organisation name, not the type
-        name = FindName(message, organisations);
-        type = FindType(message, organisations);
-        address = FindAddress(name, organisations);
-        DisplayToView(name, address, type);
-        //This is the fixDetails Branch
-    }
+        final String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);        //now we recieve the organisation name, not the type
+        String url = "https://api.myjson.com/bins/1fv6e0";//fine
+        //our file is a JSON object, so we need this request type
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            String name = "";
+                            String address = "";
+                            String type = "";
+                            JSONArray jsonArray = response.getJSONArray("organisations");   //remember this is the name of the array in your JSON file
 
+                            //here we get the values of each JSON object one at a time
+                            for(int i = 0; i < jsonArray.length(); i++) {
+                                //need this JSON object to store values
+                                Log.d("Loop", "Please see me");
+                                JSONObject organisation = jsonArray.getJSONObject(i);
+                                //we need these variables to store the values
+                                name = organisation.getString("name");
+                                address = organisation.getString("address");
+                                type = organisation.getString("type");
 
-    //get the type of the organisation from the message, we will only have the name of the organisation to work with
-    public String FindType(String messageIn, Organisation[] arrayIn)
-    {
-        int checked = 0;
-        for(int i = 0; i < arrayIn.length; i++)
-        {
-            if(messageIn.equalsIgnoreCase(arrayIn[i].getName()))
-            {
-                messageIn = arrayIn[i].getType();
-                checked++;
+                                //end loop if match is found
+                                if (name == message) {
+                                    break;
+                                }
+                            }
+
+                                //display json object to text view
+                            DisplayToView(name, address, type);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {       //called when there is an error
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
             }
-        }
-        //If either the name or type are misspelled, then an infinite loop will occur, and the activity won't starts
-        if(checked != 1)
-        {
-            messageIn = FindName(messageIn, arrayIn);
-            messageIn = FindType(messageIn, arrayIn);
-        }
-        return messageIn;
-    }
-
-    //get the name of the organisation from the message, we will only have the type of the organisation to work with
-    public String FindName(String messageIn, Organisation[] arrayIn)
-    {
-        int checked = 0;
-        for(int i = 0; i < arrayIn.length; i++)
-        {
-            if(messageIn.equalsIgnoreCase(arrayIn[i].getType()))
-            {
-                messageIn = arrayIn[i].getName();
-                checked++;
-            }
-        }
-        if(checked != 1)
-        {
-            messageIn = FindType(messageIn, arrayIn);
-            messageIn = FindName(messageIn, arrayIn);
-        }
-        return messageIn;
-    }
-
-    //get the address of the organisation from either the name or type you acquired in the prior methods
-    public String FindAddress(String nameIn, Organisation[] arrayIn)
-    {
-        String addressOut = "";
-        for(int i = 0; i < arrayIn.length; i++)
-        {
-            if(arrayIn[i].getName().equalsIgnoreCase(nameIn))
-            {
-                addressOut = arrayIn[i].getAddress();
-            }
-        }
-        return addressOut;
-    }
-
-    public String GetAllOrganisationInfo(String messageIn, Organisation[] arrayIn) {
-        //loop to print details of organisation
-        for (int i = 0; i < arrayIn.length; i++) {
-            messageIn += arrayIn[i].toString();
-        }
-        return messageIn;
+        });
     }
 
     public void DisplayToView(String nameIn, String addressIn, String typeIn) {

@@ -1,0 +1,34 @@
+{
+  "organisations": [
+    {
+      "name": "Kickers",
+      "address": "45 Shark Lane",
+      "type": "football"
+    },
+    {
+      "name": "HoopMasters",
+      "address": "56 Big Road",
+      "type": "basketball"
+    },
+    {
+      "name": "Tacklers",
+      "address": "77 Blue Street",
+      "type": "ruby"
+    },
+    {
+      "name": "Swan Toes",
+      "address": "66 Grace Lane",
+      "type": "ballet"
+    },
+    {
+      "name": "Chess Domain",
+      "address": "17 Oliver Park",
+      "type": "chess"
+    },
+    {
+      "name": "Kart Masters",
+      "address": "67 Speed Lane",
+      "type": "go_karting"
+    }
+  ]
+}
