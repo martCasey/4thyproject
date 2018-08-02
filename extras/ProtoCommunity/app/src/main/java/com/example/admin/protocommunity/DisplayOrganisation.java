@@ -9,9 +9,11 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +23,11 @@ import static java.sql.Types.NULL;
 
 //this is the changed version of the file
 public class DisplayOrganisation extends AppCompatActivity {
+
+    private TextView nameView;
+    private TextView addressView;
+    private TextView typeView;
+    private RequestQueue mQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,13 @@ public class DisplayOrganisation extends AppCompatActivity {
         super.onResume();
         // put your code here...
         //strings used to display organisation details
+        //setup textviews
+        nameView = findViewById(R.id.orgName);
+        addressView = findViewById(R.id.orgAddress);
+        typeView = findViewById(R.id.orgType);
+
+        //set up volley instance
+        mQueue = Volley.newRequestQueue(this);
         JsonParse();
     }
 
@@ -83,22 +97,13 @@ public class DisplayOrganisation extends AppCompatActivity {
                 error.printStackTrace();
             }
         });
+        mQueue.add(request);
     }
 
     public void DisplayToView(String nameIn, String addressIn, String typeIn) {
-        // Capture the layout's TextView and set the string as its text
-        TextView textView6 = findViewById(R.id.textView6);//remember the textView widget
-        textView6.setText(nameIn);
-        TextView textView5 = findViewById(R.id.textView5);//remember the textView widget
-        //Storing link here for later reference
-        //https://stackoverflow.com/questions/2394935/can-i-underline-text-in-an-android-layout
-        SpannableString content = new SpannableString(addressIn);
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView5.setText(content);
-        TextView textView7 = findViewById(R.id.textView7);//remember the textView widget
-        SpannableString content2 = new SpannableString(typeIn);
-        content2.setSpan(new UnderlineSpan(), 0, content2.length(), 0);
-        textView7.setText(content2);
+        nameView.setText(nameIn);
+        addressView.setText(addressIn);
+        typeView.setText(typeIn);
     }
 
     //volley code is likely to go here and make use of the text view
