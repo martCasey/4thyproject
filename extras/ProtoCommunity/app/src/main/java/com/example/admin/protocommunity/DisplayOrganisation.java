@@ -53,9 +53,6 @@ public class DisplayOrganisation extends AppCompatActivity {
     //JSON Code
     private void JsonParse()
     {
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        final String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);        //now we recieve the organisation name, not the type
         String url = "https://api.myjson.com/bins/1fv6e0";//fine
         //our file is a JSON object, so we need this request type
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -63,28 +60,18 @@ public class DisplayOrganisation extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            // Get the Intent that started this activity and extract the string
+                            Intent intent = getIntent();
+                            final String message = intent.getStringExtra(SelectionPage.EXTRA_MESSAGE);        //now we recieve the organisation name, not the type
                             String name = "";
                             String address = "";
                             String type = "";
                             JSONArray jsonArray = response.getJSONArray("organisations");   //remember this is the name of the array in your JSON file
-
-                            //here we get the values of each JSON object one at a time
-                            for(int i = 0; i < jsonArray.length(); i++) {
-                                //need this JSON object to store values
-                                Log.d("Loop", "Please see me");
-                                JSONObject organisation = jsonArray.getJSONObject(i);
-                                //we need these variables to store the values
-                                name = organisation.getString("name");
-                                address = organisation.getString("address");
-                                type = organisation.getString("type");
-
-                                //end loop if match is found
-                                if (name == message) {
-                                    break;
-                                }
-                            }
-
-                                //display json object to text view
+                            JSONObject organisation = jsonArray.getJSONObject(ReturnJSONArrayIndex(message, jsonArray));
+                            name = organisation.getString("name");
+                            address = organisation.getString("address");
+                            type = organisation.getString("type");
+                            //display json object to text view
                             DisplayToView(name, address, type);
 
                         } catch (JSONException e) {
@@ -98,6 +85,29 @@ public class DisplayOrganisation extends AppCompatActivity {
             }
         });
         mQueue.add(request);
+    }
+
+    //value to return index position of array
+    public int ReturnJSONArrayIndex(String message, JSONArray array)
+    {
+        int returnValue = -1;
+        try
+        {
+            for(int i = 0; i < array.length(); i++)
+            {
+                JSONObject tempObject = array.getJSONObject(i);
+                String checkName = tempObject.getString("name");
+                if(checkName == message)
+                {
+                    returnValue = i;
+                }
+            }
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return returnValue;
     }
 
     public void DisplayToView(String nameIn, String addressIn, String typeIn) {
