@@ -1,0 +1,14 @@
+{
+  "organisations": [
+    {
+      "name": "Kickers",
+      "address": "45 Shark Lane",
+      "type": "football"
+    },
+    {
+      "name": "Kart Masters",
+      "address": "67 Speed Lane",
+      "type": "go_karting"
+    }
+  ]
+}
