@@ -53,7 +53,7 @@ public class DisplayOrganisation extends AppCompatActivity {
     //JSON Code
     private void JsonParse()
     {
-        String url = "https://api.myjson.com/bins/1fv6e0";//fine
+        String url = "https://api.myjson.com/bins/69qq0";//fine
         //our file is a JSON object, so we need this request type
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
