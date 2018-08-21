@@ -51,6 +51,7 @@ public class DisplayOrganisation extends AppCompatActivity {
     }
 
     //JSON Code
+    //Something is going on here
     private void JsonParse()
     {
         String url = "https://api.myjson.com/bins/69qq0";//fine
