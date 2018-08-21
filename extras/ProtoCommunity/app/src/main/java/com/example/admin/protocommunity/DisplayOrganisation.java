@@ -54,7 +54,7 @@ public class DisplayOrganisation extends AppCompatActivity {
     //Something is going on here
     private void JsonParse()
     {
-        String url = "https://api.myjson.com/bins/13o5rc";//fine
+        String url = "https://api.myjson.com/bins/t4sco";//fine
         //our file is a JSON object, so we need this request type
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -67,9 +67,17 @@ public class DisplayOrganisation extends AppCompatActivity {
                             String name = "";
                             String address = "";
                             String type = "";
-                            //JSONArray jsonArray = response.getJSONArray("organisations");   //remember this is the name of the array in your JSON file
-                            String in = "";
-                            JSONObject org = response.getJSONObject("organisation");
+                            int match = 0;
+                            JSONArray jsonArray = response.getJSONArray("organisations");   //remember this is the name of the array in your JSON file
+                            //check jsonArray for matching organisation
+                            for(int i = 0; i < jsonArray.length(); i++)
+                            {
+                                if(jsonArray.getJSONObject(i).getString("name") == message)
+                                {
+                                    match = i;
+                                }
+                            }
+                            JSONObject org = jsonArray.getJSONObject(match);
                             name = org.getString("name");
                             address = org.getString("address");
                             type = org.getString("type");
