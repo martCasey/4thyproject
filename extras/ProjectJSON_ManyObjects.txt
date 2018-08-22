@@ -6,9 +6,9 @@
       "type": "football"
     },
     {
-      "name": "Kart Masters",
-      "address": "67 Speed Lane",
-      "type": "go_karting"
+      "name": "Swan Toes",
+      "address": "66 Grace Lane",
+      "type": "ballet"
     }
   ]
 }
