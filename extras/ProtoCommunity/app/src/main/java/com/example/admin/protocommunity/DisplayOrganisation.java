@@ -54,7 +54,7 @@ public class DisplayOrganisation extends AppCompatActivity {
     //Something is going on here
     private void JsonParse()
     {
-        String url = "https://api.myjson.com/bins/13o5rc";//fine
+        String url = "https://api.myjson.com/bins/1fef5c";//fine
         //our file is a JSON object, so we need this request type
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
