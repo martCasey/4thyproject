@@ -1,0 +1,7 @@
+{
+  "organisation": {
+    "name": "Kickers",
+    "address": "45 Shark Lane",
+    "type": "football"
+  }
+}

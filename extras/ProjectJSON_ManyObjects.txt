@@ -1,0 +1,14 @@
+{
+  "organisations": [
+    {
+      "name": "Kickers",
+      "address": "45 Shark Lane",
+      "type": "football"
+    },
+    {
+      "name": "Swan Toes",
+      "address": "66 Grace Lane",
+      "type": "ballet"
+    }
+  ]
+}
