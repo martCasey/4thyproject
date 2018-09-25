@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS Organisations
+(
+	Name VARCHAR(25) NOT NULL,
+	Address VARCHAR(50),
+	Type VARCHAR(15) NOT NULL
+);
+
+INSERT INTO Organisations(Name, Address, Type) VALUES("Kickers", "45 Shark Lane", "football");
+INSERT INTO Organisations(Name, Address, Type) VALUES("HoopMasters", "56 Big Road", "basketball");
+INSERT INTO Organisations(Name, Address, Type) VALUES("Tacklers", "77 Blue Street", "ruby");
+INSERT INTO Organisations(Name, Address, Type) VALUES("Swan Toes", "66 Grace Lane", "ballet");
+INSERT INTO Organisations(Name, Address, Type) VALUES("Chess Domain", "17 Oliver Park", "chess");
+INSERT INTO Organisations(Name, Address, Type) VALUES("Kart Masters", "67 Speed Lane", "go-karting");
